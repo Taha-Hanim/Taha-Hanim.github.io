@@ -46,7 +46,7 @@
           <div class="hero-meta">
             <div class="meta-item">
               <span class="meta-label">•</span>
-              <span><a href="mailto:your-email@example.com">your-email@example.com</a></span>
+              <span><a href="mailto:contact@tahahanim.dev" target="_blank">contact@tahahanim.dev</a></span>
             </div>
             <div class="meta-item">
               <span class="meta-label">•</span>
@@ -88,7 +88,7 @@
             </p>
             <p>
               I thrive in finding edge cases, reproducing bugs with clarity, and contributing 
-              to game quality. I'm multilingual (Arabic, French, English, Polish) and experienced 
+              to game quality. I'm multilingual (Arabic, French, English, Spanish) and experienced 
               collaborating with global teams.
             </p>
             <div class="about-cta">
@@ -149,36 +149,20 @@
         <div class="projects-grid">
           <div class="project-card">
             <div class="project-header">
-              <div class="project-icon">★</div>
-              <h3>QA Test Plan & Documentation</h3>
-            </div>
-            <p>
-              Comprehensive test plan with detailed test cases, exploratory checklists, 
-              and reproducible bug reports demonstrating QA methodology.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Manual Testing</span>
-              <span class="tag">Test Design</span>
-              <span class="tag">Documentation</span>
-            </div>
-            <a href="sample_test_plan.md" class="btn btn-small" target="_blank">View Artifact</a>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
               <div class="project-icon">◆</div>
-              <h3>Test Automation Helper</h3>
+              <h3>Python Voice Bot (2022)</h3>
             </div>
             <p>
-              Python utility script for generating test inputs and automating 
-              validation checks, demonstrating automation and scripting skills.
+              A personal voice assistant I built in June 2022 when I was 15.
+              It can tell time, fetch Wikipedia summaries, tell jokes, open websites,
+              and run a number guessing mini-game.
             </p>
             <div class="project-tags">
               <span class="tag">Python</span>
-              <span class="tag">Automation</span>
-              <span class="tag">Testing</span>
+              <span class="tag">Voice Bot</span>
+              <span class="tag">Personal Project</span>
             </div>
-            <a href="#" class="btn btn-small disabled">Coming Soon</a>
+            <button type="button" id="open-bot-code-modal" class="btn btn-small">View Script</button>
           </div>
 
           <div class="project-card">
@@ -235,9 +219,6 @@
           </div>
           <button type="submit" class="btn btn-primary btn-large">Send Message</button>
         </form>
-        <p class="form-note">
-          Form uses EmailJS. Replace IDs in <code>script.js</code> before deploying.
-        </p>
       </div>
     </section>
 
@@ -247,14 +228,24 @@
         <p>&copy; 2026 Taha Hanim. Built with passion for game testing.</p>
         <div class="footer-links">
           <a href="https://github.com/Taha-Hanim" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/taha-hanim/" target="_blank">LinkedIn</a>
-          <a href="mailto:your-email@example.com">Email</a>
+          <a href="mailto:contact@tahahanim.dev" target="_blank">Email</a>
         </div>
       </div>
     </footer>
 
+    <div id="bot-code-modal" class="code-modal" aria-hidden="true">
+      <div class="code-modal__backdrop" data-close-modal="true"></div>
+      <div class="code-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="bot-code-title">
+        <div class="code-modal__header">
+          <h3 id="bot-code-title">Python Voice Bot - Original 2022 Code</h3>
+          <button type="button" id="close-bot-code-modal" class="code-modal__close" aria-label="Close popup">&times;</button>
+        </div>
+        <pre class="code-modal__content"><code id="bot-code-content"></code></pre>
+      </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

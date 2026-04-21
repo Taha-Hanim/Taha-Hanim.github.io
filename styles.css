@@ -641,6 +641,85 @@ body {
   color: var(--secondary);
 }
 
+/* ===== CODE MODAL ===== */
+.code-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: none;
+}
+
+.code-modal.is-open {
+  display: block;
+}
+
+.code-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 35, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.code-modal__dialog {
+  position: relative;
+  width: min(980px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  margin: 24px auto;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+  overflow: hidden;
+}
+
+.code-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85));
+}
+
+.code-modal__header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.code-modal__close {
+  border: 0;
+  background: rgba(241, 245, 249, 0.1);
+  color: #f8fafc;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.code-modal__close:hover {
+  background: rgba(241, 245, 249, 0.2);
+}
+
+.code-modal__content {
+  margin: 0;
+  padding: 16px;
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+  background: #020617;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  white-space: pre;
+}
+
+.code-modal__content code {
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .container {
@@ -712,5 +791,20 @@ body {
 
   .footer-content {
     padding: 0 20px;
+  }
+
+  .code-modal__dialog {
+    width: calc(100vw - 18px);
+    margin: 9px auto;
+    max-height: calc(100vh - 18px);
+  }
+
+  .code-modal__header h3 {
+    font-size: 0.9rem;
+  }
+
+  .code-modal__content {
+    font-size: 0.78rem;
+    max-height: calc(100vh - 120px);
   }
 }

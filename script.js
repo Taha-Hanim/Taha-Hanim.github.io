@@ -1,7 +1,8 @@
 // ===== EMAIL JS CONFIGURATION =====
-const EMAILJS_USER_ID = 'your_emailjs_user_id';
-const EMAILJS_SERVICE_ID = 'your_service_id';
-const EMAILJS_TEMPLATE_ID = 'your_template_id';
+const EMAILJS_PUBLIC_KEY = 'WscvrXMfDVMWv9lSd';
+const EMAILJS_SERVICE_ID = 'service_cusbjlp';
+const EMAILJS_TEMPLATE_ID = 'template_ztn6e8p';
+const CONTACT_RECEIVER_NAME = 'Taha Hanim';
 
 // ===== SMOOTH SCROLLING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -17,18 +18,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===== CONTACT FORM HANDLING =====
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
+  if (window.emailjs) {
+    emailjs.init({
+      publicKey: EMAILJS_PUBLIC_KEY,
+    });
+  }
+
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const senderName = document.getElementById('name').value.trim();
+    const senderEmail = document.getElementById('email').value.trim();
+    const senderMessage = document.getElementById('message').value.trim();
+
+    if (!senderName || !senderEmail || !senderMessage) {
+      alert('Please fill in all fields before sending your message.');
+      return;
+    }
+
     const formData = {
-      from_name: document.getElementById('name').value,
-      reply_to: document.getElementById('email').value,
-      message: document.getElementById('message').value,
+      to_name: CONTACT_RECEIVER_NAME,
+      from_name: senderName,
+      reply_to: senderEmail,
+      from_email: senderEmail,
+      message: senderMessage,
+      subject: `New portfolio message from ${senderName}`,
+      sent_at: new Date().toLocaleString(),
     };
 
     // Check if EmailJS is configured
     if (window.emailjs) {
-      emailjs.init(EMAILJS_USER_ID);
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+
       emailjs
         .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
         .then(
@@ -38,9 +64,18 @@ if (contactForm) {
           },
           function (error) {
             console.error('EmailJS Error:', error);
-            alert('❌ Failed to send message. Please try again.');
+            const errorText = error && (error.text || error.message)
+              ? `${error.text || error.message}`
+              : 'Unknown EmailJS error';
+            alert(`❌ Failed to send message. ${errorText}`);
           }
-        );
+        )
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+          }
+        });
     } else {
       alert('⚠️ EmailJS is not configured. Replace the IDs in script.js to enable email sending.');
       console.log('Form Data (logged):', formData);
@@ -160,3 +195,126 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// ===== PYTHON BOT CODE MODAL =====
+const botCodeModal = document.getElementById('bot-code-modal');
+const openBotCodeModalBtn = document.getElementById('open-bot-code-modal');
+const closeBotCodeModalBtn = document.getElementById('close-bot-code-modal');
+const botCodeContent = document.getElementById('bot-code-content');
+
+const originalBotCode = `import datetime
+import webbrowser
+import pyjokes
+import pyttsx3
+import wikipedia
+import random
+
+name = input("please enter your first name: ")
+age = float(input("how old are you? "))
+
+# about age:
+
+if age < "10":
+    quit("you are under 10 years old")
+
+# STARTING THE PROGRAMME
+
+gg = True
+engine = pyttsx3.init()
+while gg:
+    engine.say("hello sir "+name+" I am your python robot")
+    engine.say("how can i help you ? ")
+    engine.runAndWait()
+
+    order = input("...").lower()
+
+# wikipedia
+
+    if "search on wikipedia about" in order:
+        person = order.replace("search on wikipedia about", "")
+        info = wikipedia.summary(person, 1)
+        print(info)
+        engine.say(info)
+        engine.runAndWait()
+
+# time
+
+    if "what time is it" in order:
+        time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(time)
+        engine.say("current time is "+time)
+        engine.runAndWait()
+
+# jokes
+
+    elif "tell me a joke" in order:
+        engine.say(pyjokes.get_joke())
+        engine.runAndWait()
+
+# guessing game
+
+    elif "play a game" in order:
+        play = engine.say("do you really want to play the guessing game ")
+        print("do you really want to play the guessing game ")
+        engine.runAndWait()
+        guessing_game = input("yes/no: ").lower()
+
+        if guessing_game != "yes":
+            quit("ok . I will quit the game")
+        else:
+            game1 = random.randint(0, 9)
+            give = input("guess the number: ")
+            if give == game1:
+                engine.say("correct")
+                engine.say("the guessing game is over sorry sir ")
+                engine.runAndWait()
+            else:
+                engine.say("you're wrong the number was : ")
+                print(game1)
+                engine.runAndWait()
+                engine.say("the guessing game is over ")
+                engine.runAndWait()
+
+    if "open" in order:
+        engine.say("what's the name of the website ")
+        engine.runAndWait()
+        print("u can type just the name of it like youtube or google ...")
+        web = input("...")
+        webbrowser.open("www."+web+".com")
+
+    if "quit" in order:
+        quit()
+
+    if "stop" in order:
+        gg = False`;
+
+if (botCodeModal && openBotCodeModalBtn && closeBotCodeModalBtn && botCodeContent) {
+  botCodeContent.textContent = originalBotCode;
+
+  const openModal = () => {
+    botCodeModal.classList.add('is-open');
+    botCodeModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    botCodeModal.classList.remove('is-open');
+    botCodeModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  openBotCodeModalBtn.addEventListener('click', openModal);
+  closeBotCodeModalBtn.addEventListener('click', closeModal);
+
+  botCodeModal.addEventListener('click', (event) => {
+    if (event.target instanceof HTMLElement && event.target.dataset.closeModal === 'true') {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && botCodeModal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+}
