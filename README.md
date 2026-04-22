@@ -1,53 +1,61 @@
-# Portfolio — Taha Hanim
+# Taha Hanim Portfolio
 
-This repository is a starter portfolio site tailored for job applications (game testing/QA). It is a simple static site you can host on GitHub Pages, Netlify or Vercel.
+Personal portfolio website focused on software testing, localization QA, and early software engineering projects.
 
-Files added:
-- `index.html` — main single-page site
-- `styles.css` — site styles
-- `script.js` — contact form handling (EmailJS placeholders)
-- `resume.md` — generated resume (edit as needed)
+This project is fully static (HTML/CSS/JavaScript), lightweight, and easy to deploy on GitHub Pages, Netlify, or Vercel.
 
-Quick local preview
+## What this portfolio includes
 
-1. Open `index.html` in a browser. No build step required.
+- Clean landing page with profile, skills, and contact section
+- Project showcase section (including my Python Voice Bot project)
+- Resume download button
+- Contact form integration using EmailJS
+- Modal preview for Python project source code
 
-Contact form (EmailJS)
+## Tech stack
 
-1. Create an EmailJS account and add a new email service.
-2. Create a template with fields `from_name`, `reply_to`, `message`.
-3. Replace the placeholders in `script.js`:
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- EmailJS
 
-   - `EMAILJS_USER_ID`
+## Project structure
+
+- `index.html` - main portfolio page
+- `assets/css/styles.css` - site styling
+- `assets/js/script.js` - interactions, animations, contact form, modal logic
+- `assets/Resume.pdf` - downloadable resume
+- `python_voice_bot_2022.py` - original Python bot source
+- `cover_letter_lionbridge.md` - role-tailored cover letter draft
+
+## Run locally
+
+No build tools required.
+
+1. Clone this repository
+2. Open `index.html` in your browser
+
+## Contact form setup (EmailJS)
+
+To make the contact form work with your own account:
+
+1. Create an EmailJS service and template
+2. Open `assets/js/script.js`
+3. Replace these constants with your own values:
+   - `EMAILJS_PUBLIC_KEY`
    - `EMAILJS_SERVICE_ID`
    - `EMAILJS_TEMPLATE_ID`
 
-4. Add the EmailJS SDK to `index.html` before `script.js`:
+## Deployment
 
-```
-<script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
-```
+This site can be deployed directly as a static project:
 
-Deploy to GitHub Pages
+- GitHub Pages
+- Netlify
+- Vercel
 
-1. Initialize a git repo (if not already):
+## About me
 
-```
-git init
-git add .
-git commit -m "Initial portfolio"
-```
+I am a Computer Engineering student based in Warsaw, interested in localization QA, software testing, and backend/software engineering growth paths.
 
-2. Create a new GitHub repo named `Taha-Hanim.github.io` and push. Then enable GitHub Pages from the repository settings.
-
-Next steps I can do for you
-
-- Replace placeholders with your real email and resume
-- Add a professional headshot or avatar
-- Create an additional page with a downloadable PDF resume
-- Add a sample automation script to the repo and a real project with a README and code
-- Create a tailored cover letter for Lionbridge
-
-If you'd like, I can now:
-- Commit this scaffold into your workspace (done). Open it locally and edit content
-- Generate a PDF resume and a tailored cover letter for Lionbridge — tell me if you want that next.
+I enjoy improving quality, documenting issues clearly, and continuously learning through practical projects.

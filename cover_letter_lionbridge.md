@@ -1,12 +1,14 @@
-# Cover Letter — Lionbridge (Sample)
+# Cover Letter — Lionbridge
 
 Dear Hiring Team,
 
-I am a second-year Computer Engineering student at Vistula University with a strong interest in game testing and quality assurance. I bring hands-on experience creating test plans, writing clear reproducible bug reports, and building small tooling in Java and Python to support testing workflows.
+I am a Computer Engineering student at Vistula University in Warsaw and I am applying for the Localization Quality Assurance Tester role at Lionbridge Games. I am highly interested in game localization quality and I bring hands-on testing practice from multilingual projects, including structured bug reporting, test case execution, and language quality validation.
 
-I am multilingual (Arabic, French, English, Spanish), which helps me communicate effectively with global development teams and test localized builds. I am detail-oriented, methodical, and eager to learn Lionbridge's processes and contribute immediately to the quality of your game testing efforts.
+Through my practical QA experience, I have tested multilingual interfaces, documented issues with clear reproduction steps, and supported localization checks for consistency, grammar, and terminology. I also completed training in software testing fundamentals and localization QA best practices, which strengthened my understanding of defect workflows and quality standards.
 
-I have attached a short test plan and sample bug reports in my portfolio to demonstrate my approach. I would welcome the opportunity to discuss how my technical foundation and passion for games can add value to your QA team.
+I am multilingual (Arabic, French, English, and Spanish), with strong cultural awareness and clear communication in international contexts. I am detail-oriented, proactive, and comfortable working under pressure while meeting deadlines. I am available for on-site testing in Warsaw during standard working hours and ready to contribute effectively to your LQA team.
+
+Thank you for your time and consideration. I would welcome the opportunity to discuss how I can support Lionbridge in delivering high-quality localized gaming experiences.
 
 Sincerely,
 

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taha Hanim | QA Engineer & Software Tester</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Taha Hanim | Computer Engineering Student & Software Developer</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
     <!-- Navigation -->
@@ -33,11 +33,11 @@
       <div class="hero-content">
         <div class="hero-text">
           <h1 class="hero-title">
-            QA Engineer & <span class="gradient-text">Software Tester</span>
+            Taha Hanim <span class="gradient-text">Computer Engineering Student</span>
           </h1>
           <p class="hero-subtitle">
-            I build quality into software through meticulous testing, clear communication, and a passion for excellence. 
-            Computer Engineering student at Vistula University.
+            19-year-old Computer Engineering student at Vistula University (3rd semester), based in Warsaw.
+            Interested in backend development and software engineering, with a self-taught journey that started at 14.
           </p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -55,24 +55,114 @@
           </div>
         </div>
         <div class="hero-visual">
-          <div class="stats-box">
-            <div class="stat">
-              <div class="stat-number">2+</div>
-              <div class="stat-label">Years Experience</div>
+          <div class="hero-terminal" aria-label="Developer terminal preview">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">taha@portfolio:~</span>
             </div>
-            <div class="stat">
-              <div class="stat-number">4</div>
-              <div class="stat-label">Languages</div>
+            <div class="terminal-body">
+              <p class="terminal-line"><span class="prompt">$</span> whoami</p>
+              <p class="terminal-output">Taha Hanim</p>
+              <p class="terminal-line"><span class="prompt">$</span> interests</p>
+              <p class="terminal-output">backend, software engineering</p>
+              <p class="terminal-line"><span class="prompt">$</span> languages</p>
+              <p class="terminal-output">Arabic, French, English, Spanish</p>
+              <p class="terminal-line terminal-line-cursor"><span class="prompt">$</span> _</p>
             </div>
-            <div class="stat">
-              <div class="stat-number">∞</div>
-              <div class="stat-label">Attention to Detail</div>
-            </div>
+            <div class="terminal-base" aria-hidden="true"></div>
           </div>
           <div class="hero-decoration"></div>
         </div>
       </div>
     </section>
+
+    <script id="python-bot-code-fallback" type="text/plain">import datetime
+import webbrowser
+import pyjokes
+import pyttsx3
+import wikipedia
+import random
+
+name = input("please enter your first name: ")
+age = float(input("how old are you? "))
+
+# about age:
+
+if age < "10":
+    quit("you are under 10 years old")
+
+# STARTING THE PROGRAMME
+
+gg = True
+engine = pyttsx3.init()
+while gg:
+    engine.say("hello sir "+name+" I am your python robot")
+    engine.say("how can i help you ? ")
+    engine.runAndWait()
+
+    order = input("...").lower()
+
+# wikipedia
+
+    if "search on wikipedia about" in order:
+        person = order.replace("search on wikipedia about", "")
+        info = wikipedia.summary(person, 1)
+        print(info)
+        engine.say(info)
+        engine.runAndWait()
+
+# time
+
+    if "what time is it" in order:
+        time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(time)
+        engine.say("current time is "+time)
+        engine.runAndWait()
+
+# jokes
+
+    elif "tell me a joke" in order:
+        engine.say(pyjokes.get_joke())
+        engine.runAndWait()
+
+# guessing game
+
+    elif "play a game" in order:
+        play = engine.say("do you really want to play the guessing game ")
+        print("do you really want to play the guessing game ")
+        engine.runAndWait()
+        guessing_game = input("yes/no: ").lower()
+
+        if guessing_game != "yes":
+            quit("ok . I will quit the game")
+        else:
+            game1 = random.randint(0, 9)
+            give = input("guess the number: ")
+            if give == game1:
+                engine.say("correct")
+                engine.say("the guessing game is over sorry sir ")
+                engine.runAndWait()
+            else:
+                engine.say("you're wrong the number was : ")
+                print(game1)
+                engine.runAndWait()
+                engine.say("the guessing game is over ")
+                engine.runAndWait()
+
+    if "open" in order:
+        engine.say("what's the name of the website ")
+        engine.runAndWait()
+        print("u can type just the name of it like youtube or google ...")
+        web = input("...")
+        webbrowser.open("www."+web+".com")
+
+    if "quit" in order:
+        quit()
+
+    if "stop" in order:
+        gg = False</script>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -81,32 +171,31 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              I'm a second-year Computer Engineering student at Vistula University with 
-              a strong passion for game testing and quality assurance. I combine solid software 
-              development fundamentals (Java, Python, Spring Boot) with meticulous testing 
-              methodology and a keen eye for detail.
+              I am currently in my 3rd semester of Computer Engineering at Vistula University in Warsaw.
+              My coding journey started at 14 as a self-taught learner with limited resources,
+              which helped me build resilience, independence, and strong problem-solving habits.
             </p>
             <p>
-              I thrive in finding edge cases, reproducing bugs with clarity, and contributing 
-              to game quality. I'm multilingual (Arabic, French, English, Spanish) and experienced 
-              collaborating with global teams.
+              At 15, I created my first Python voice bot, and since then I have continued developing
+              my skills in software development with a strong interest in backend engineering.
+              I work well under pressure, communicate clearly, and genuinely enjoy researching and learning new technologies.
             </p>
             <div class="about-cta">
-              <a href="resume.md" class="btn btn-outline" target="_blank">Download Resume</a>
+              <a href="assets/Resume.pdf" id="download-resume-btn" class="btn btn-outline" download="Taha-Hanim-Resume.md">Download Resume</a>
             </div>
           </div>
           <div class="about-highlights">
             <div class="highlight-box">
               <h3>Education</h3>
-              <p>B.Sc. Computer Engineering<br/>Vistula University (2nd Year)</p>
+              <p>B.Sc. Computer Engineering<br/>Vistula University (3rd Semester)</p>
             </div>
             <div class="highlight-box">
               <h3>Languages</h3>
               <p>Arabic • French • English • Spanish</p>
             </div>
             <div class="highlight-box">
-              <h3>Contact</h3>
-              <p>+48 452 914 860<br/>Warsaw, Poland</p>
+              <h3>Profile</h3>
+              <p>Age: 19<br/>Warsaw, Poland</p>
             </div>
           </div>
         </div>
@@ -120,8 +209,8 @@
         <div class="skills-grid">
           <div class="skill-card">
             <div class="skill-icon">◆</div>
-            <h3>Testing & QA</h3>
-            <p>Manual testing • Exploratory testing • Test design • Bug reporting • Test automation</p>
+            <h3>Software Foundations</h3>
+            <p>Programming logic • Debugging • Problem solving • Clean code practices</p>
           </div>
           <div class="skill-card">
             <div class="skill-icon">◇</div>
@@ -131,12 +220,12 @@
           <div class="skill-card">
             <div class="skill-icon">★</div>
             <h3>Tools & Platforms</h3>
-            <p>Git • Jira • Test case management • Email JS • Version control</p>
+            <p>Git • GitHub • EmailJS • Version control • CLI workflow</p>
           </div>
           <div class="skill-card">
             <div class="skill-icon">✓</div>
             <h3>Professional Skills</h3>
-            <p>Communication • Documentation • Problem solving • Attention to detail</p>
+            <p>Communication • Working under pressure • Fast learning • Team collaboration</p>
           </div>
         </div>
       </div>
@@ -168,17 +257,18 @@
           <div class="project-card">
             <div class="project-header">
               <div class="project-icon">◇</div>
-              <h3>Bug Report Template</h3>
+              <h3>Spring Boot REST API</h3>
             </div>
             <p>
-              Professional bug report template with clear fields for severity, 
-              reproduction steps, and detailed analysis. Best practice documentation.
+              a fully functional REST API built with Spring Boot as part of my university coursework.
+              It demonstrates CRUD operations, clean layered architecture, professional exception handling, and API documentation using industry-standard tools.
             </p>
             <div class="project-tags">
-              <span class="tag">QA Documentation</span>
-              <span class="tag">Best Practices</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">REST API</span>
+              <span class="tag">University Project</span>
             </div>
-            <a href="bug_report_template.md" class="btn btn-small" target="_blank">View Template</a>
+            <a href="https://github.com/Taha-Hanim/MyGitRepo/tree/master/TASK2" class="btn btn-small" target="_blank">View Documentation</a>
           </div>
 
           <div class="project-card">
@@ -187,8 +277,8 @@
               <h3>Professional Portfolio</h3>
             </div>
             <p>
-              This portfolio website showcasing QA expertise, technical skills, 
-              and professional communication abilities. Built with modern web technologies.
+              Personal portfolio designed for internship and junior opportunities in
+              backend development and software engineering.
             </p>
             <div class="project-tags">
               <span class="tag">Portfolio</span>
@@ -205,7 +295,7 @@
       <div class="container">
         <h2 class="section-title">Get in Touch</h2>
         <p class="section-subtitle">
-          Interested in game testing opportunities? Let's chat!
+          Open to internships and junior roles in backend and software engineering.
         </p>
         <form id="contact-form" class="contact-form">
           <div class="form-group">
@@ -225,7 +315,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">
-        <p>&copy; 2026 Taha Hanim. Built with passion for game testing.</p>
+        <p>&copy; 2026 Taha Hanim. Built with passion for software engineering.</p>
         <div class="footer-links">
           <a href="https://github.com/Taha-Hanim" target="_blank">GitHub</a>
           <a href="mailto:contact@tahahanim.dev" target="_blank">Email</a>
@@ -246,6 +336,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
