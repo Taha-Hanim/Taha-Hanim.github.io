@@ -22,7 +22,7 @@ if (downloadResumeBtn) {
     e.preventDefault();
 
     const resumePath = this.getAttribute('href');
-    const downloadName = this.getAttribute('download') || 'resume.md';
+    const downloadName = this.getAttribute('download') || 'resume.pdf';
 
     if (!resumePath) {
       return;
